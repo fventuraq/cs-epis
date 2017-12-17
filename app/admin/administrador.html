@@ -1,0 +1,101 @@
+<md-toolbar class="md-primary " style="padding:0;" >
+<div class="md-toolbar-tools"><h2 class="md-flex">ADMINISTRADOR DE LA EMPRESA</h2>
+</div>
+</md-toolbar>
+<md-content layout="column" align="left" style="padding:24px" data-ng-init="listarAdministrador()">
+
+    <fieldset class="mi-fieldset"><legend >Informacion Personal.</legend></fieldset>
+    <div layout layout-xs="column" >
+        <md-input-container flex="33" flex-xs="100">
+          <label>Documento de identidad (DNI)</label>
+          <input type="text" md-maxlength="8" ng-model="persona.DNI" />
+        </md-input-container>
+        <md-input-container flex>
+          <label>Nombre(s)</label>
+          <input type="text" md-maxlength="64" ng-model="persona.Nom" />
+        </md-input-container>
+    </div>
+    <div layout layout-xs="column">
+        <md-input-container flex>
+          <label>Primer Apellido</label>
+          <input type="text" md-maxlength="32" ng-model="persona.PriApe" />
+        </md-input-container>
+        <md-input-container flex>
+          <label>Segundo Apellido</label>
+          <input type="text" md-maxlength="32" ng-model="persona.SegApe" />
+        </md-input-container>
+    </div>
+    <div layout layout-xs="column" >
+        <md-input-container flex>
+          <label>Fecha Nacimiento</label>
+          <input type="date" ng-model="persona.FecNac" />
+        </md-input-container>
+        <md-input-container class="flex md-input-focused">
+            <label style="color: rgba(0,0,0,0.54)">Sexo</label>
+            <md-radio-group ng-model="persona.SexID" style="display:flex">
+                <md-radio-button value="F" style="margin: 5px; 10px ">Femenino</md-radio-button>
+                <md-radio-button value="M" style="margin: 5px; 10px" class="md-primary">Masculino</md-radio-button>
+            </md-radio-group>
+        </md-input-container>
+        <md-input-container class="flex md-input-focused">
+            <label style="color: rgba(0,0,0,0.54)">Estado Civil</label>
+            <md-radio-group ng-model="persona.EstCivID" style="display:flex">
+                <md-radio-button value="1" style="margin: 5px; 10px">Soltero</md-radio-button>
+                <md-radio-button value="2" style="margin: 5px; 10px">Casado</md-radio-button>
+                <md-radio-button value="3" style="margin: 5px; 10px">Divorciado</md-radio-button>
+            </md-radio-group>
+        </md-input-container>
+    </div>
+    <div layout layout-xs="column" >
+        <md-input-container flex>
+          <label>Numero celular</label>
+          <input type="text" ng-model="persona.Tel" />
+        </md-input-container>
+        <md-input-container flex>
+          <label>Correo Electronico</label>
+          <input type="text" ng-model="persona.Ema" />
+        </md-input-container>
+    </div>
+    <div layout layout-xs="column" >
+        <md-input-container flex>
+            <label>Pais</label>
+            <md-select ng-model="persona.PaiID">
+                <md-option ng-repeat="pais in paises" ng-value="pais.PaiID">
+                {{pais.Nom}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex>
+          <label>Ciudad o Provincia</label>
+          <input type="text" ng-model="persona.CiuPro" />
+        </md-input-container>
+    </div>
+    <div layout layout-xs="column" >
+        <md-input-container flex>
+          <label>Direccion de recidencia actual (opcional)</label>
+          <input type="text" ng-model="persona.DirAct" />
+        </md-input-container>
+    </div>
+    <div layout layout-align="center center" flex class="layout-padding3" >
+		<md-button class="md-raised md-primary" ng-if="estado" ng-click="guardarDatosAdministrador($event)" >Guardar Informacion Personal</md-button>
+	</div>
+    <fieldset class="mi-fieldset"><legend >Informacion de Usuario.</legend></fieldset>
+    <div layout layout-xs="column">
+        <md-input-container flex >
+            <label>Nombre del Usuario</label>
+            <input type="text" ng-model="usuario.NomUsu" />
+        </md-input-container>
+        <md-input-container flex >
+            <label>Password</label>
+            <input type="text" ng-model="usuario.Pas" />
+        </md-input-container>
+    </div>
+    
+    <div layout layout-align="center center" flex class="layout-padding3" >
+        <md-button class="md-raised md-primary" ng-if="!estado" ng-click="registrarAdministrador()" >Registrar Administrador</md-button>
+		<md-button class="md-raised md-primary" ng-if="estado" ng-click="guardarDatosUsuario($event)" >Guadar Informacion de Usuario</md-button>
+	</div>
+
+</md-content>
+
+	

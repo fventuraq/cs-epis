@@ -1,0 +1,80 @@
+[07-Dec-2017 12:41:55 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'virextec_iamd_db.MA_USER' doesn't exist' in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php:19
+Stack trace:
+#0 /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php(19): PDOStatement->execute()
+#1 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(19): Usuario->buscarUsuario('admin', 'admin')
+#2 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(146): ServicioLogin->processPOST(Object(stdClass))
+#3 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(163): ServicioLogin->atenderSolicitud()
+#4 {main}
+  thrown in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php on line 19
+[07-Dec-2017 12:42:25 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'virextec_iamd_db.MA_USER' doesn't exist' in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php:19
+Stack trace:
+#0 /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php(19): PDOStatement->execute()
+#1 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(19): Usuario->buscarUsuario('admin', 'admin')
+#2 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(146): ServicioLogin->processPOST(Object(stdClass))
+#3 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(163): ServicioLogin->atenderSolicitud()
+#4 {main}
+  thrown in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php on line 19
+[07-Dec-2017 12:42:45 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'virextec_iamd_db.MA_USER' doesn't exist' in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php:19
+Stack trace:
+#0 /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php(19): PDOStatement->execute()
+#1 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(19): Usuario->buscarUsuario('administrador', 'administrador')
+#2 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(146): ServicioLogin->processPOST(Object(stdClass))
+#3 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(163): ServicioLogin->atenderSolicitud()
+#4 {main}
+  thrown in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php on line 19
+[07-Dec-2017 12:44:30 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'virextec_iamd_db.MA_USER' doesn't exist' in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php:19
+Stack trace:
+#0 /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php(19): PDOStatement->execute()
+#1 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(19): Usuario->buscarUsuario('admin', 'admin')
+#2 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(146): ServicioLogin->processPOST(Object(stdClass))
+#3 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(163): ServicioLogin->atenderSolicitud()
+#4 {main}
+  thrown in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php on line 19
+[07-Dec-2017 12:44:54 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'virextec_iamd_db.MA_USER' doesn't exist' in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php:19
+Stack trace:
+#0 /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php(19): PDOStatement->execute()
+#1 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(19): Usuario->buscarUsuario('administrador', 'administrador')
+#2 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(146): ServicioLogin->processPOST(Object(stdClass))
+#3 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(163): ServicioLogin->atenderSolicitud()
+#4 {main}
+  thrown in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php on line 19
+[07-Dec-2017 12:46:34 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'virextec_iamd_db.MA_USER' doesn't exist' in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php:19
+Stack trace:
+#0 /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php(19): PDOStatement->execute()
+#1 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(19): Usuario->buscarUsuario('admin', 'admin')
+#2 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(146): ServicioLogin->processPOST(Object(stdClass))
+#3 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(163): ServicioLogin->atenderSolicitud()
+#4 {main}
+  thrown in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php on line 19
+[07-Dec-2017 12:48:43 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'virextec_iamd_db.MA_USER' doesn't exist' in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php:19
+Stack trace:
+#0 /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php(19): PDOStatement->execute()
+#1 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(19): Usuario->buscarUsuario('admin', 'admin')
+#2 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(146): ServicioLogin->processPOST(Object(stdClass))
+#3 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(163): ServicioLogin->atenderSolicitud()
+#4 {main}
+  thrown in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php on line 19
+[07-Dec-2017 12:49:41 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'virextec_iamd_db.MA_USER' doesn't exist' in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php:19
+Stack trace:
+#0 /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php(19): PDOStatement->execute()
+#1 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(19): Usuario->buscarUsuario('admin', 'admin')
+#2 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(146): ServicioLogin->processPOST(Object(stdClass))
+#3 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(163): ServicioLogin->atenderSolicitud()
+#4 {main}
+  thrown in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php on line 19
+[07-Dec-2017 12:52:35 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'virextec_iamd_db.MA_USER' doesn't exist' in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php:19
+Stack trace:
+#0 /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php(19): PDOStatement->execute()
+#1 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(19): Usuario->buscarUsuario('admin', 'admin')
+#2 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(146): ServicioLogin->processPOST(Object(stdClass))
+#3 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(163): ServicioLogin->atenderSolicitud()
+#4 {main}
+  thrown in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php on line 19
+[07-Dec-2017 12:52:55 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'virextec_iamd_db.MA_USER' doesn't exist' in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php:19
+Stack trace:
+#0 /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php(19): PDOStatement->execute()
+#1 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(19): Usuario->buscarUsuario('administrador', 'administrador')
+#2 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(146): ServicioLogin->processPOST(Object(stdClass))
+#3 /home/virextec/public_html/iamd/servidor/ServicioLogin.php(163): ServicioLogin->atenderSolicitud()
+#4 {main}
+  thrown in /home/virextec/public_html/iamd/servidor/modelo/Usuario.class.php on line 19
