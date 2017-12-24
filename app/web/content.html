@@ -1,67 +1,42 @@
 <div class="my-section">
 	<div class="my-content">
 		<div class="md-toolbar-tools">
-			<h2 class="md-flex">WebSite: {{website.Tit}}</h2>
+			<h2 class="md-flex">Pagina Web: {{website.Tit}}</h2>
 			<span flex></span>
-			<md-button class="md-raised" ng-click="prevWebSite()">atras</md-button>
-			<md-button class="md-raised md-primary" ng-click="showWebSite()">ver</md-button>
+			<md-button class="md-raised" ng-click="prevContainer()" title="regresar a mis paginas">atras</md-button>
+			<md-button class="md-raised" ng-click="showContainer(container.ConID)" title="ver la pagina web">ver pagina</md-button>
 		</div>
 	</div>
 </div>
-<div class="my-section">
-	<div class="my-content">
-		<md-toolbar class="md-primary " style="padding:0">
-			<div class="md-toolbar-tools"><h2 class="md-flex">CONTENIDO POR SECCION</h2></div>
-		</md-toolbar>
-		<div class="form-content" layout layout-wrap layout-xs="column" layout-padding>
-
-			<div flex="100" flex-xs="100">
-
-				<md-input-container class="md-block" flex-gt-sm>
-				  <label>Titulo</label>
-				  <input type="text" ng-model="sect.Tit" />
-				</md-input-container>
-				<md-input-container class="md-block" flex-gt-sm>
-				  <label>Descripcion</label>
-				  <input type="text" ng-model="sect.Des" />
-				</md-input-container>
-			</div>
-			<div flex="100" align="center">
-				<md-button class="md-raised md-primary" ng-click="registrarContent()">Registrar</md-button>
-			</div>
-
-		</div>
-	</div>
-</div>
-
 <div class="my-section">
 	<div class="my-content">
 		<md-toolbar class="md-primary " >
 		<div class="md-toolbar-tools">
-			<h2 class="md-flex">Lista de Contenidos</h2>
+			<h2 class="md-flex">Contenido</h2>
 			<span flex></span>
-			<md-button class="md-raised md-primary" ng-click="prepareNew($event)">Nuevo</md-button>
-			<md-button class="md-raised" ng-click="listContents()">Listar</md-button>
+			<md-button class="md-raised md-primary" ng-click="prepareNew($event)" title="registrar una seccion">Nuevo</md-button>
+			<md-button class="md-raised" ng-click="list()" title="listar las secciones">Listar</md-button>
 		</div>
 		</md-toolbar>
 		<md-content layout layout-xs="column" style="padding:8px">
-			<table style="width:100%;" data-ng-init="listWebSites()" class="table table-hover table-striped">
+			<table style="width:100%;" data-ng-init="verify(website)?list():false;" class="table table-hover table-striped">
 				<thead>
 					<tr>
-						<th style="text-align:center">Titulo</th>
-						<th style="text-align:center">Descripcion</th>
-						<th style="text-align:center">accion</th>
+						<th style="text-align:center">Titulo 1</th>
+						<th style="text-align:center">Titulo 2</th>
+						<th style="text-align:center;">Estado</th>
 					</tr>
 				</thead>
 				<tbody >
-					<tr ng-repeat="v in listaVentanas">
+					<tr ng-repeat="c in listRegisters">
 						<td style="text-align:center">{{c.Tit}}</td>
-						<td style="text-align:center">{{c.Des}}</td>
+						<td style="text-align:center">{{c.Tit2}}</td>
+						<td style="text-align:center;">{{c.RegEst}}</td>
 						<td style="text-align:center;padding: 0;width:80px">
-						<md-button class="md-fab button-peque md-primary" aria-label="Eat cake" ng-click="prepareUpdate($event,c)" style="margin-right:0">
+						<md-button class="md-fab button-peque md-primary" aria-label="Eat cake" ng-click="prepareUpdate($event,c)" title="editar contenido" style="margin-right:0">
 							<md-icon md-svg-src="../resources/img/icons/editar.svg"></md-icon>
 						</md-button>
-						<md-button class="md-fab button-peque" aria-label="Use Android" ng-click="eliminarContent($index,c)" style="margin-left:0">
+						<md-button class="md-fab button-peque" aria-label="Use Android" ng-click="deleteRegister($index,c)" title="eliminar contenido" style="margin-left:0">
 							<md-icon md-svg-src="../resources/img/icons/eliminar.svg"></md-icon>
 						</md-button>
 						</td>

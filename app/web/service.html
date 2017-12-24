@@ -12,7 +12,7 @@
 	<div class="my-content">
 		<md-toolbar class="md-primary " >
 		<div class="md-toolbar-tools">
-			<h2 class="md-flex">Secciones</h2>
+			<h2 class="md-flex">Servicios</h2>
 			<span flex></span>
 			<md-button class="md-raised md-primary" ng-click="prepareNew($event)" title="registrar una seccion">Nuevo</md-button>
 			<md-button class="md-raised" ng-click="list()" title="listar las secciones">Listar</md-button>
@@ -22,25 +22,23 @@
 			<table style="width:100%;" data-ng-init="verify(website)?list():false;" class="table table-hover table-striped">
 				<thead>
 					<tr>
-						<th class=""="con-ord" style="text-align:center">N Orden</th>
-						<th class=""="con-tit" style="text-align:center">Titulo</th>
-						<th class="con-url" style="text-align:center;">Url</th>
-						<th class="action" style="text-align:center">accion</th>
+						<th style="text-align:center">Nombre</th>
+						<th style="text-align:center">Descripcion</th>
+						<th style="text-align:center;">Detalle</th>
+						<th style="text-align:center">Estado</th>
 					</tr>
 				</thead>
 				<tbody >
-					<tr ng-repeat="r in listRegisters">
-						<td style="text-align:center">{{r.Ord}}</td>
-						<td style="text-align:center">{{r.Tit}}</td>
-						<td style="text-align:center;">{{r.Url}}</td>
+					<tr ng-repeat="s in listRegisters">
+						<td style="text-align:center">{{s.Nom}}</td>
+						<td style="text-align:center">{{s.Des}}</td>
+						<td style="text-align:center;">{{s.Det}}</td>
+						<td style="text-align:center;">{{s.RegSta}}</td>
 						<td style="text-align:center;padding: 0;width:80px">
-						<md-button class="md-fab button-peque md-primary" aria-label="Eat cake" ng-click="prepareUpdate($event,c)" title="editar seccion" style="margin-right:0">
+						<md-button class="md-fab button-peque md-primary" aria-label="Eat cake" ng-click="prepareUpdate($event,s)" title="editar seccion" style="margin-right:0">
 							<md-icon md-svg-src="../resources/img/icons/editar.svg"></md-icon>
 						</md-button>
-						<md-button class="md-fab button-peque md-primary" aria-label="Eat cake" ng-click="prepareConfig3(c)" title="cofigurar Contenido" style="margin-right:0">
-							<md-icon md-svg-src="../resources/img/icons/go.svg"></md-icon>
-						</md-button>
-						<md-button class="md-fab button-peque" aria-label="Use Android" ng-click="deleteRegister($index,c)" title="eliminar seccion" style="margin-left:0">
+						<md-button class="md-fab button-peque" aria-label="Use Android" ng-click="deleteRegister($index,s)" title="eliminar seccion" style="margin-left:0">
 							<md-icon md-svg-src="../resources/img/icons/eliminar.svg"></md-icon>
 						</md-button>
 						</td>

@@ -1,17 +1,17 @@
 'use strict';
 
 //controlador principal de toda la aplicacion
-miApp.controller('contentCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud','upload',function($scope,$mdDialog,$mdToast,recursoCrud,upload) {
+miApp.controller('serviceCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud','upload',function($scope,$mdDialog,$mdToast,recursoCrud,upload) {
 
-	$scope.container = JSON.parse( localStorage.getItem('container') );
-	$scope.cont = {};
+	$scope.website = JSON.parse( localStorage.getItem('website') );
+	$scope.ser = {};
 	$scope.regSel = {};
 
 	$scope.listRegisters = [];
 
 	$scope.list = function (){
 
-		recursoCrud.listar("ContentService.php", {accion:1,ConID:$scope.container.ConID} ).then(
+		recursoCrud.listar("ServiceService.php", {accion:1,WebSitID:$scope.website.WebSitID} ).then(
 			function(data) {
 				$scope.listRegisters = data.data;
 			}, function(data) {
@@ -25,31 +25,31 @@ miApp.controller('contentCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud','
 
 	$scope.prepareNew = function(ev){
 		$mdDialog.show({
-			controller: DialogContent,
-			templateUrl: 'web/dialogContent.html',
+			controller: DialogService,
+			templateUrl: 'web/dialogService.html',
 			parent: angular.element(document.body),
 			targetEvent: ev,
 			clickOutsideToClose:true,
-			locals: {title:'Nuevo Contenido', data: {}}
+			locals: {title:'Nuevo Servicio', data: {}}
 		})
 		.then(function(res) {
 			//guardadno lo cambios hechos
-			$scope.cont = res;
+			$scope.ser = res;
 			$scope.newRegister();
 
 		}, function() {
 			//cancelando la funcion
 		});
 	};
-	$scope.prepareUpdate = function(ev,c){
-		$scope.regSel = c;
+	$scope.prepareUpdate = function(ev,s){
+		$scope.regSel = s;
 		$mdDialog.show({
-			controller: DialogContent,
-			templateUrl: 'web/dialogContent.html',
+			controller: DialogService,
+			templateUrl: 'web/dialogService.html',
 			parent: angular.element(document.body),
 			targetEvent: ev,
 			clickOutsideToClose:true,
-			locals: {title:'Editar Contenido', data: c}
+			locals: {title:'Editar Servicio', data: s}
 		})
 		.then(function(res) {
 			//guardadno lo cambios hechos
@@ -64,17 +64,17 @@ miApp.controller('contentCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud','
 
 	$scope.newRegister = function (){
 
-		$scope.cont.ConID = $scope.container.ConID;
+		$scope.ser.WebSitID = $scope.website.WebSitID;
 
-		recursoCrud.insertar("ContentService.php", $scope.cont ).then(
+		recursoCrud.insertar("ServiceService.php", $scope.ser ).then(
 
 			function(data) {
 				$mdToast.show($mdToast.simple().textContent(data.mensaje).position('top right').hideDelay(2000));
 				if(data.estado){
-					$scope.cont.ConInfID = data.ID;
-					$scope.listRegisters.push($scope.cont);
+					$scope.ser.SerID = data.ID;
+					$scope.listRegisters.push($scope.ser);
 
-					$scope.cont = {};
+					$scope.ser = {};
 
 				}
 			}, function(data) {
@@ -85,12 +85,12 @@ miApp.controller('contentCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud','
 		);
 	};
 
-	$scope.updateRegister = function (c){
+	$scope.updateRegister = function (s){
 
-		var register = {Tit:c.Tit, Tit2:c.Tit2, Img:c.Img, Img2:c.Img2, Img3:c.Img3};
-		var ID = {ConInfID:c.ConInfID,ConID: $scope.container.ConID};
+		var register = {Nom:s.Nom, Des:s.Des, Det:s.Det, Img1:s.Img1, Img2:s.Img2, Img3:s.Img3};
+		var ID = {SerID:s.SerID,WebSitID: $scope.website.WebSitID};
 
-		recursoCrud.actualizar("ContentService.php", {dato:register,ID:ID} ).then(
+		recursoCrud.actualizar("ServiceService.php", {dato:register,ID:ID} ).then(
 			function(data) {
 				$mdToast.show($mdToast.simple().textContent(data.mensaje).position('top right').hideDelay(2000));
 				if(data.estado){
@@ -103,10 +103,10 @@ miApp.controller('contentCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud','
 			}
 		);
 	};
-	$scope.deleteRegister = function (c){
-		var ID = {ConInfID:c.ConInfID,ConID: $scope.container.ConID};
+	$scope.deleteRegister = function (s){
+		var ID = {SerID:s.SerID,WebSitID: $scope.website.WebSitID};
 
-		recursoCrud.eliminar("ContentService.php", ID ).then(
+		recursoCrud.eliminar("ServiceService.php", ID ).then(
 			function(data) {
 				$mdToast.show($mdToast.simple().textContent(data.mensaje).position('top right').hideDelay(2000));
 				if(data.estado)
@@ -121,7 +121,7 @@ miApp.controller('contentCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud','
 
 }]);
 
-function DialogContainer($scope, $mdDialog,title,data) {
+function DialogService($scope, $mdDialog,title,data) {
 	$scope.title = title;
     $scope.regSel = JSON.parse(JSON.stringify(data));
     $scope.cancel = function() {

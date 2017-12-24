@@ -248,18 +248,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--Fin de la ventana Modal2 para el registro -->
 
 <!-- Slider carrusel -->
+
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
 			<li data-target="#myCarousel" data-slide-to="Sec1-Id" class="active"></li>
 		</ol>
-		<div class="carousel-inner" role="listbox"> <!--listar todo los slider (4-8)-->
-			<div class="item active">
-				<div class="container">
-					<div class="carousel-caption">
-						<h3>Sec1-Texto1 <span>Sec1-Texto2</span></h3>
-						<p>Sec1-Texto3</p>
-						<a class="hvr-outline-out button2" href="Sec1-LinkTexto4">Sec1-Texto4 </a>
+		<div class="ng-repeat">
+			<div ng-repeat="s in web.services">
+				<div class="carousel-inner" role="listbox"> <!--listar todo los slider (4-8)-->
+					<div class="item active">
+						<div class="container">
+							<div class="carousel-caption">
+								<h3>{{s.Nom}} <span>{{s.Des}}</span></h3>
+								<p>{{s.Det}}</p>
+								<a class="hvr-outline-out button2" href="Sec1-LinkTexto4">Sec1-Texto4 </a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -39,7 +39,7 @@ miApp.run(['$rootScope','$location','$mdSidenav','$mdDialog','recursoCrud',funct
 	recursoCrud.validarToken();
 
 	$rootScope.usuario = {};
-    $rootScope.sectionSelect = {};
+  $rootScope.sectionSelect = {};
 	$rootScope.menuSelect = {};
 	$rootScope.secciones = [];
 	$rootScope.ocultar = true;
@@ -152,6 +152,15 @@ miApp.run(['$rootScope','$location','$mdSidenav','$mdDialog','recursoCrud',funct
 		//FALTA
 		localStorage.setItem('website',JSON.stringify(website));
 		$location.path("/product");
+
+		//FALTA
+		$rootScope.menuSelect = 6;
+		localStorage.setItem('menuSelect',JSON.stringify($rootScope.menuSelect) );
+	};
+	$rootScope.prepareConfig3 = function(container){
+		//FALTA
+		localStorage.setItem('container',JSON.stringify(container));
+		$location.path("/content");
 
 		//FALTA
 		$rootScope.menuSelect = 6;
