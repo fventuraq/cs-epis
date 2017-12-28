@@ -255,9 +255,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<li data-target="#myCarousel" data-slide-to="Sec1-Id" class="active"></li>
 		</ol>
 		<div class="ng-repeat">
-			<div ng-repeat="s in web.services">
+			<div ng-repeat="s in web.services track by $index">
 				<div class="carousel-inner" role="listbox"> <!--listar todo los slider (4-8)-->
-					<div class="item active">
+					<div class="item" ng-class="{'active': $index=='0'}">
 						<div class="container">
 							<div class="carousel-caption">
 								<h3>{{s.Nom}} <span>{{s.Des}}</span></h3>

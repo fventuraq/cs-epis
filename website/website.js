@@ -37,7 +37,6 @@ miApp.run(['$rootScope','servicioLogin',function($rootScope, servicioLogin) {
 				$rootScope.web.sections = dato.sections;
 				$rootScope.web.products = dato.products;
 				$rootScope.web.services = dato.services;
-				$rootScope.con.content = dato.contents;
 				//console.log($rootScope.web.sections);
 			}
 		});

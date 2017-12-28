@@ -180,6 +180,15 @@ miApp.run(['$rootScope','$location','$mdSidenav','$mdDialog','recursoCrud',funct
 		return true;
 	};
 
+	$rootScope.selectedItem = 0;
+
+	$rootScope.dic = [ {conOrd:"Orden",Titulo:"Title"},
+							{conOrd:"Orden 1",Titulo:"Title1"},
+							{conOrd:"Orden 2",Titulo:"Title2"}];
+
+
+
+
 	// de la pagina
 
 	/*
