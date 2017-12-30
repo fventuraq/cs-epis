@@ -51,15 +51,15 @@
                 </div>
             </div>
 						<div class="row" style="width:100px;">
-							<md-select id="idioma-select" ng-model="selectedItem">
-								<md-option id="en" value="0">es</md-option>
-								<md-option id="es" value="1">en</md-option>
-								<md-option id="pt" value="2">pt</md-option>
+							<md-select ng-model="selectedItem">
+								<md-option  value="0">es</md-option>
+								<md-option  value="1">en</md-option>
+								<md-option  value="2">pt</md-option>
 							</md-select>
 						</div>
 			<md-button ng-click="cerrarSession()" class=" b-icon" style="margin:0 8px;" title="cerrar sesión">
 				<md-icon md-svg-src="../resources/img/icons/encendido.svg" hide-gt-xs style="height: 32px;width: 32px;"></md-icon>
-				cerrar sesión
+				{{dic[selectedItem].CerrSes}}
 			</md-button>
 		</div>
 	</md-toolbar>

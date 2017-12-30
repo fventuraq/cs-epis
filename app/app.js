@@ -182,9 +182,17 @@ miApp.run(['$rootScope','$location','$mdSidenav','$mdDialog','recursoCrud',funct
 
 	$rootScope.selectedItem = 0;
 
-	$rootScope.dic = [ {conOrd:"Orden",Titulo:"Title"},
-							{conOrd:"Orden 1",Titulo:"Title1"},
-							{conOrd:"Orden 2",Titulo:"Title2"}];
+	$rootScope.dic = [{Clave:"Clave", VPadre:"Ventana padre", Vistas:"Registro de vistas", Contrasena:"Contraseña", NomUserAd:"Nombre de Usuario administrador", Sistema:"Administrador del sistema", Email:"Correo electrónico", Empresa:"Datos de la empresa", Servicios:"Servicios", Estado:"Estado", Productos:"Productos", Descripcion:"Descripción", Dominios:"Dominios", MisWeb:"Mis Paginas Web", Guardar:"Guardar",
+										Icono2:"Icono", LVistas:"Lista de vistas", Registrar:"Registrar", Icono:"Elegir icono", URLControlador:"Enlace del controlador", URLVista:"Enlace de la lista", Cancelar:"Cancelar", CerrSes:"Cerrar Sesión", PaginaWeb:"Sitio web",
+	 									CamCont:"Cambiar contraseña", BrevDes:"Breve descripción", NomCom:"Nombre completo", Codigo:"Código", Detalle:"Detalle", Promocion:"Promoción", Precio:"Precio", Nombre:"Nombre", Atras:"Atrás", VerPagina:"Ver Pagina", Section:"Secciones", Nuevo:"Nuevo", Listar:"Listar", conOrd:"Orden", conTit:"Titulo", conUrl:"Enlace", Action:"Acción"},
+
+										{Clave:"Key", VPadre:"Parent window", Vistas:"Record of views", Contrasena:"Password", NomUserAd:"Administrator User Name", Sistema:"System administrator", Email:"e-mail", Empresa:"Company data", Servicios:"Services", Estado:"State", Productos:"Products", Descripcion:"Description", Dominios:"Domains", MisWeb:"My Web Sites", Guardar:"Save",
+										Icono2:"Icon", LVistas:"List of views", Registrar:"To register", Icono:"Choose icon", URLControlador:"Controller link", URLVista:"List link", Cancelar:"Cancel", CerrSes:"Sign out", PaginaWeb:"Website",
+										CamCont:"Change Password", BrevDes:"Short description", NomCom:"Full name", Codigo:"Code", Detalle:"Detail", Promocion:"Promotion", Precio:"Price", Nombre:"Name", Atras:"Back", VerPagina:"See Page", Section:"Sections", Nuevo:"New", Listar:"To List", conOrd:"Order",conTit:"Title", conUrl:"Link", Action:"Action"},
+
+										{Clave:"Chave", VPadre:"Janela pai", Vistas:"Registro de visualizações", Contrasena:"Senha", NomUserAd:"Nome de Usuário do Administrador", Sistema:"Administrador do sistema", Email:"O email", Empresa:"Dados da compahia", Servicios:"Serviços", Estado:"Situação", Productos:"Produtos", Descripcion:"Descrição", Dominios:"Domínios", MisWeb:"Minhas Páginas da Web", Guardar:"Salvar",
+										Icono2:"Ícone", LVistas:"Lista de visualizações", Registrar:"Registre-se", Icono:"Escolha o ícone", URLControlador:"Link do controlador", URLVista:"Link da lista", Cancelar:"Cancelar", CerrSes:"Fechar Sessão", PaginaWeb:"Site",
+										CamCont:"Alterar senha", BrevDes:"Breve descrição", NomCom:"Nome completo", Codigo:"código", Detalle:"Detalhe", Promocion:"Promoção", Precio:"Preço", Nombre:"Nome", Atras:"Voltar", VerPagina:"Veja a página", Section:"Seções", Nuevo:"Novo", Listar:"Lista", conOrd:"Encomenda",conTit:"Epígrafe", conUrl:"ligação", Action:"ação"}];
 
 
 

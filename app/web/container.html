@@ -1,10 +1,10 @@
 <div class="my-section">
 	<div class="my-content">
 		<div class="md-toolbar-tools">
-			<h2 class="md-flex">Pagina Web: {{website.Tit}}</h2>
+			<h2 class="md-flex">{{dic[selectedItem].PaginaWeb}}: {{website.Tit}}</h2>
 			<span flex></span>
-			<md-button class="md-raised" ng-click="prevWebSite()" title="regresar a mis paginas">atras</md-button>
-			<md-button class="md-raised" ng-click="showWebSite(website.WebSitID)" title="ver la pagina web">ver pagina</md-button>
+			<md-button class="md-raised" ng-click="prevWebSite()" title="regresar a mis paginas">{{dic[selectedItem].Atras}}</md-button>
+			<md-button class="md-raised" ng-click="showWebSite(website.WebSitID)" title="ver la pagina web">{{dic[selectedItem].VerPagina}}</md-button>
 		</div>
 	</div>
 </div>
@@ -12,10 +12,10 @@
 	<div class="my-content">
 		<md-toolbar class="md-primary " >
 		<div class="md-toolbar-tools">
-			<h2 class="md-flex">Secciones</h2>
+			<h2 class="md-flex">{{dic[selectedItem].Section}}</h2>
 			<span flex></span>
-			<md-button class="md-raised md-primary" ng-click="prepareNew($event)" title="registrar una seccion">Nuevo</md-button>
-			<md-button class="md-raised" ng-click="list()" title="listar las secciones">Listar</md-button>
+			<md-button class="md-raised md-primary" ng-click="prepareNew($event)" title="registrar una seccion">{{dic[selectedItem].Nuevo}}</md-button>
+			<md-button class="md-raised" ng-click="list()" title="listar las secciones">{{dic[selectedItem].Listar}}</md-button>
 		</div>
 		</md-toolbar>
 		<md-content layout layout-xs="column" style="padding:8px">
@@ -23,9 +23,9 @@
 				<thead>
 					<tr>
 						<th class="con-ord" style="text-align:center"> {{dic[selectedItem].conOrd}}</th>
-						<th class="con-tit" style="text-align:center">{{dic[selectedItem].Titulo}}</th>
-						<th class="con-url" style="text-align:center;">Url</th>
-						<th class="action" style="text-align:center">accion</th>
+						<th class="con-tit" style="text-align:center">{{dic[selectedItem].conTit}}</th>
+						<th class="con-url" style="text-align:center;">{{dic[selectedItem].conUrl}}</th>
+						<th class="action" style="text-align:center">{{dic[selectedItem].Action}}</th>
 					</tr>
 				</thead>
 				<tbody >

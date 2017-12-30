@@ -1,10 +1,10 @@
 <div class="my-section">
 	<div class="my-content">
 		<div class="md-toolbar-tools">
-			<h2 class="md-flex">Pagina Web: {{website.Tit}}</h2>
+			<h2 class="md-flex">{{dic[selectedItem].PaginaWeb}}: {{website.Tit}}</h2>
 			<span flex></span>
-			<md-button class="md-raised" ng-click="prevWebSite()" title="regresar a mis paginas">atras</md-button>
-			<md-button class="md-raised" ng-click="showWebSite(website.WebSitID)" title="ver la pagina web">ver pagina</md-button>
+			<md-button class="md-raised" ng-click="prevWebSite()" title="regresar a mis paginas">{{dic[selectedItem].Atras}}</md-button>
+			<md-button class="md-raised" ng-click="showWebSite(website.WebSitID)" title="ver la pagina web">{{dic[selectedItem].VerPagina}}</md-button>
 		</div>
 	</div>
 </div>
@@ -12,20 +12,21 @@
 	<div class="my-content">
 		<md-toolbar class="md-primary " >
 		<div class="md-toolbar-tools">
-			<h2 class="md-flex">Servicios</h2>
+			<h2 class="md-flex">{{dic[selectedItem].Servicios}}</h2>
 			<span flex></span>
-			<md-button class="md-raised md-primary" ng-click="prepareNew($event)" title="registrar una seccion">Nuevo</md-button>
-			<md-button class="md-raised" ng-click="list()" title="listar las secciones">Listar</md-button>
+			<md-button class="md-raised md-primary" ng-click="prepareNew($event)" title="registrar una seccion">{{dic[selectedItem].Nuevo}}</md-button>
+			<md-button class="md-raised" ng-click="list()" title="listar las secciones">{{dic[selectedItem].Listar}}</md-button>
 		</div>
 		</md-toolbar>
 		<md-content layout layout-xs="column" style="padding:8px">
 			<table style="width:100%;" data-ng-init="verify(website)?list():false;" class="table table-hover table-striped">
 				<thead>
 					<tr>
-						<th style="text-align:center">Nombre</th>
-						<th style="text-align:center">Descripcion</th>
-						<th style="text-align:center;">Detalle</th>
-						<th style="text-align:center">Estado</th>
+						<th style="text-align:center">{{dic[selectedItem].Nombre}}</th>
+						<th style="text-align:center">{{dic[selectedItem].Descripcion}}</th>
+						<th style="text-align:center;">{{dic[selectedItem].Detalle}}</th>
+						<th style="text-align:center">{{dic[selectedItem].Estado}}</th>
+						<th style="text-align:center">{{dic[selectedItem].Action}}</th>
 					</tr>
 				</thead>
 				<tbody >

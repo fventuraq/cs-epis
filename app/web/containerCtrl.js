@@ -2,15 +2,15 @@
 
 //controlador principal de toda la aplicacion
 miApp.controller('containerCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud','upload',function($scope,$mdDialog,$mdToast,recursoCrud,upload) {
-	
-	$scope.website = JSON.parse( localStorage.getItem('website') );	
+
+	$scope.website = JSON.parse( localStorage.getItem('website') );
 	$scope.con = {};
 	$scope.regSel = {};
-    
+
 	$scope.listRegisters = [];
-	
-	$scope.list = function (){	
-		
+
+	$scope.list = function (){
+
 		recursoCrud.listar("ContainerService.php", {accion:1,WebSitID:$scope.website.WebSitID} ).then(
 			function(data) {
 				$scope.listRegisters = data.data;
@@ -21,8 +21,8 @@ miApp.controller('containerCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud'
 			}
 		);
 	};
-	
-	
+
+
 	$scope.prepareNew = function(ev){
 		$mdDialog.show({
 			controller: DialogContainer,
@@ -36,7 +36,7 @@ miApp.controller('containerCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud'
 			//guardadno lo cambios hechos
 			$scope.con = res;
 			$scope.newRegister();
-			
+
 		}, function() {
 			//cancelando la funcion
 		});
@@ -49,33 +49,33 @@ miApp.controller('containerCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud'
 			parent: angular.element(document.body),
 			targetEvent: ev,
 			clickOutsideToClose:true,
-			locals: {title:'Editar Seccion', data: r}
+			locals: {title:'Editar Contenedor', data: r}
 		})
 		.then(function(res) {
 			//guardadno lo cambios hechos
-			
+
 			$scope.updateRegister(res);
-			
+
 		}, function() {
 			//cancelando la funcion
 		});
 	};
-	
-	
+
+
 	$scope.newRegister = function (){
-		
+
 		$scope.con.WebSitID = $scope.website.WebSitID;
-		
-		recursoCrud.insertar("ContainerService.php", $scope.con ).then(		
-		
+
+		recursoCrud.insertar("ContainerService.php", $scope.con ).then(
+
 			function(data) {
 				$mdToast.show($mdToast.simple().textContent(data.mensaje).position('top right').hideDelay(2000));
 				if(data.estado){
 					$scope.con.ConID = data.ID;
 					$scope.listRegisters.push($scope.con);
-					
-					$scope.con = {};	
-				
+
+					$scope.con = {};
+
 				}
 			}, function(data) {
 				$mdToast.show($mdToast.simple().textContent(data).position('top right').hideDelay(6000));
@@ -84,14 +84,14 @@ miApp.controller('containerCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud'
 			}
 		);
 	};
-	
+
 	$scope.updateRegister = function (r){
-		
+
 		var register = {Tit:r.Tit,Url:r.Url,Ord:r.Ord};
 		var ID = {ConID:r.ConID,WebSitID: $scope.website.WebSitID};
-		
+
 		recursoCrud.actualizar("ContainerService.php", {dato:register,ID:ID} ).then(
-			function(data) {				
+			function(data) {
 				$mdToast.show($mdToast.simple().textContent(data.mensaje).position('top right').hideDelay(2000));
 				if(data.estado){
 					recursoCrud.copiar($scope.regSel,register);
@@ -105,9 +105,8 @@ miApp.controller('containerCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud'
 	};
 	$scope.deleteRegister = function (r){
 		var ID = {ConID:r.ConID,WebSitID: $scope.website.WebSitID};
-		
 		recursoCrud.eliminar("ContainerService.php", ID ).then(
-			function(data) {				
+			function(data) {
 				$mdToast.show($mdToast.simple().textContent(data.mensaje).position('top right').hideDelay(2000));
 				if(data.estado)
 					$scope.listRegisters.splice(i,1);
@@ -122,6 +121,8 @@ miApp.controller('containerCtrl', ['$scope','$mdDialog','$mdToast','recursoCrud'
 }]);
 
 function DialogContainer($scope, $mdDialog,title,data) {
+	console.log (JSON.stringify(data));
+
 	$scope.title = title;
     $scope.regSel = JSON.parse(JSON.stringify(data));
     $scope.cancel = function() {

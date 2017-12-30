@@ -2,20 +2,20 @@
 	<div class="my-content">
 		<md-toolbar class="md-primary " >
 		<div class="md-toolbar-tools">
-			<h2 class="md-flex">Mis Paginas Web</h2>
+			<h2 class="md-flex">{{dic[selectedItem].MisWeb}}</h2>
 			<span flex></span>
-			<md-button class="md-raised md-primary" ng-click="prepareNew($event)" title="registar pagina web">Nuevo</md-button>
-			<md-button class="md-raised" ng-click="list()" title="listar mis paginas web">Listar</md-button>
+			<md-button class="md-raised md-primary" ng-click="prepareNew($event)" title="registar pagina web">{{dic[selectedItem].Nuevo}}</md-button>
+			<md-button class="md-raised" ng-click="list()" title="listar mis paginas web">{{dic[selectedItem].Listar}}</md-button>
 		</div>
 		</md-toolbar>
 		<md-content layout layout-xs="column" style="padding:8px">
 			<table style="width:100%;" data-ng-init="list()" class="table table-hover table-striped">
 				<thead>
 					<tr>
-						<th style="text-align:center">Dominio</th>
-						<th style="text-align:center">Titulo</th>
-						<th style="text-align:center;">Descripcion</th>
-						<th style="text-align:center">accion</th>
+						<th style="text-align:center">{{dic[selectedItem].Dominios}}</th>
+						<th style="text-align:center">{{dic[selectedItem].conTit}}</th>
+						<th style="text-align:center;">{{dic[selectedItem].Descripcion}}</th>
+						<th style="text-align:center">{{dic[selectedItem].Action}}</th>
 					</tr>
 				</thead>
 				<tbody >
